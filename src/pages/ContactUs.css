@@ -1,0 +1,105 @@
+.contact-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  color: #222;
+}
+
+/* Hero section */
+.contact-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.contact-hero h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.contact-hero > p {
+  color: #7a9a8a;
+  font-size: 1rem;
+}
+
+/* WhatsApp button */
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background-color: #3d5a6a;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.whatsapp-btn:hover {
+  background-color: #2e4555;
+  color: #fff;
+}
+
+.whatsapp-btn svg {
+  width: 22px;
+  height: 22px;
+  color: #25d366;
+  flex-shrink: 0;
+}
+
+/* Info section */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.contact-info h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.contact-tagline {
+  color: #888;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.contact-row {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.contact-label {
+  margin-right: 0.35rem;
+  color: #666;
+}
+
+.contact-row a {
+  color: #444;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.contact-row a:hover {
+  color: #1a1a1a;
+}

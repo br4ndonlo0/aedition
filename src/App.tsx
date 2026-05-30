@@ -1,22 +1,25 @@
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
 import Header from './components/Header'
+import Footer from './components/Footer'
+import FloatingContact from './components/FloatingContact'
+import Home from './pages/Home'
+import AboutUs from './pages/AboutUs'
+import Products from './pages/Products'
+import ContactUs from './pages/ContactUs'
 
 function App() {
   return (
     <div className="app">
       <Header />
-
-      <main className="main-content">
-        <section className="hero">
-          <h1>Welcome to aedition</h1>
-          <p>Your app description goes here.</p>
-          <button className="btn-primary">Get Started</button>
-        </section>
-      </main>
-
-      <footer className="footer">
-        <p>&copy; {new Date().getFullYear()} aedition. All rights reserved.</p>
-      </footer>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/contact" element={<ContactUs />} />
+      </Routes>
+      <Footer />
+      <FloatingContact />
     </div>
   )
 }
