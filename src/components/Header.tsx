@@ -1,18 +1,25 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import './Header.css'
 
 export default function Header() {
   return (
     <header className="header">
-      <div className="header-logo">
-        <img src="/aedition-logo.png" alt="Aedition Technology" />
+      <div className="container header-container">
+        <Link to="/" className="header-logo">
+          <img src="/aedition-logo.png" alt="Aedition Technology" />
+        </Link>
+        <nav className="header-nav">
+          <NavLink to="/" end>Home</NavLink>
+          <NavLink to="/about">About Us</NavLink>
+          <NavLink to="/products">Products</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
+        </nav>
+        <div className="header-actions">
+          <Link to="/contact" className="btn btn-ghost header-cta-btn">
+            Get in touch
+          </Link>
+        </div>
       </div>
-      <nav className="header-nav">
-        <NavLink to="/" end>HOME</NavLink>
-        <NavLink to="/about">ABOUT US</NavLink>
-        <NavLink to="/products">PRODUCTS</NavLink>
-        <NavLink to="/contact">CONTACT US</NavLink>
-      </nav>
     </header>
   )
 }

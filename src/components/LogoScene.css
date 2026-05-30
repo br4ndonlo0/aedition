@@ -1,5 +1,6 @@
 .logo-scene {
   width: 100%;
-  height: 420px;
+  max-width: 520px;
+  height: clamp(280px, 42vw, 400px);
   background: transparent;
 }

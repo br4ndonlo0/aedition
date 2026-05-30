@@ -33,6 +33,13 @@ function useTransparentLogo(src: string) {
 
       const tex = new THREE.CanvasTexture(canvas)
       tex.colorSpace = THREE.SRGBColorSpace
+      // Keep the marks crisp: trilinear filtering + anisotropy so the
+      // texture stays sharp when scaled up or viewed at an angle (spinning E).
+      tex.magFilter = THREE.LinearFilter
+      tex.minFilter = THREE.LinearMipmapLinearFilter
+      tex.anisotropy = 16
+      tex.generateMipmaps = true
+      tex.needsUpdate = true
       setTexture(tex)
     }
   }, [src])
@@ -93,7 +100,11 @@ function LogoMesh({ scrollY }: { scrollY: React.MutableRefObject<number> }) {
 export default function LogoScene({ scrollY }: { scrollY: React.MutableRefObject<number> }) {
   return (
     <div className="logo-scene">
-      <Canvas camera={{ position: [0, 0, 4], fov: 45 }} gl={{ alpha: true }}>
+      <Canvas
+        camera={{ position: [0, 0, 4], fov: 45 }}
+        gl={{ alpha: true, antialias: true }}
+        dpr={[1, 2]}
+      >
         <LogoMesh scrollY={scrollY} />
       </Canvas>
     </div>
